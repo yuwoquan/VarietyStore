@@ -46,7 +46,7 @@ public class BookDetailActivity extends AppCompatActivity {
     }
 
     private void initSettext() {
-        Log.d(TAG, "杀杀杀"+author.toString());
+        Log.d(TAG, "作者"+author.toString());
         book_rating.setText("评分："+rating+" 分");
         book_pubdate.setText("出版时间："+pubdate);
         book_page.setText("页数："+page+"页");

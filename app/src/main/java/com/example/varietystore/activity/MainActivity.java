@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
-//        transaction = getSupportFragmentManager().beginTransaction().add(R.id.fragment,new Fragment_movie()).commit();
         FragmentManager fragmentManage = getSupportFragmentManager();
         fragmentManage.beginTransaction().add(R.id.replacefragment,fragmentmovie).commit();
         mFragment=fragmentmovie;
