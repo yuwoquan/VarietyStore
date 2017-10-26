@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="5dp"
+    app:cardElevation="2dp"
+    android:id="@+id/cardview"
+    app:cardCornerRadius="6dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:text="一个垂直方向的DrawerLayout,抽屉从上向下展开"
+            android:maxLines="2"
+            android:textSize="16sp"
+            android:ellipsize="end"
+            android:textColor="#252526"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/who"
+                android:drawablePadding="2dp"
+                android:text="xiaolong"
+                android:textColor="#44836e"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/time"
+                android:drawablePadding="2dp"
+                android:maxLength="10"
+                android:text="2016-50-17"
+                android:textColor="#398157"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:gravity="right"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

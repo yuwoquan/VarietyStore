@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:layout_marginTop="0.5dp"
+    android:layout_marginBottom="0.5dp"
+    app:cardElevation="0dp"
+    android:id="@+id/cardview"
+    app:cardCornerRadius="20dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/downtext"
+            android:gravity="center"
+            android:text="一个垂直方向的DrawerLayout,抽屉从上向下展开"
+            android:maxLines="2"
+            android:textColor="#00796B"
+            android:textSize="15sp"
+            android:ellipsize="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/time"
+                android:text="2016-50-17"
+                android:textSize="10dp"
+                android:textColor="#c4c0c0"
+                android:gravity="left"
+                android:layout_weight="6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/name"
+                android:text="余沃铨~~~"
+                android:textColor="#757575"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:gravity="bottom|right"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/movie_photo"
+        android:layout_width="100dp"
+        android:layout_height="148dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="14dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="霸王别姬"
+            android:maxLines="1"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/movie_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="导演：陈凯歌" />
+
+        <TextView
+            android:id="@+id/movie_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="上映年代：" />
+        <TextView
+            android:id="@+id/movie_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:text="主演段小楼生，一个饰旦，此，关系的理解有本质不同，段小楼深知戏非人生，程蝶衣则是人戏不分。）"
+            android:maxLines="2"/>
+        <TextView
+            android:id="@+id/movie_average"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="评分" />
+        <TextView
+            android:id="@+id/movie_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="类型：" />
+        </LinearLayout>
+</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="#c0c4c3"/>
+</LinearLayout>
