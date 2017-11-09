@@ -53,7 +53,7 @@ public class Fragment_Mesage_Board extends Fragment implements  SwipeRefreshLayo
     private int curPage = 0;
     String lastTime = null;
     private TextView timer,detailtext,namer;
-    List<User> user=new ArrayList<User>();
+    List<User> bmobuser=new ArrayList<User>();
 
     private CardView cardview;
     private CoordinatorLayout coordinatorLayout;
@@ -102,9 +102,9 @@ public class Fragment_Mesage_Board extends Fragment implements  SwipeRefreshLayo
                 detailtext= (TextView)detailcontent.findViewById(R.id.detailtext);
                 timer= (TextView) detailcontent.findViewById(R.id.timer);
                 namer= (TextView) detailcontent.findViewById(R.id.namer);
-                detailtext.setText((CharSequence) user.get(position).getDetails());
-                timer.setText(user.get(position).getCreatedAt());
-                namer.setText(user.get(position).getName());
+                detailtext.setText(adapter.getItem(position).getDetails());
+                timer.setText(adapter.getItem(position).getCreatedAt());
+                namer.setText(adapter.getItem(position).getName());
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext())
                         .setView(detailcontent);
                          builder.show();
@@ -139,11 +139,11 @@ public class Fragment_Mesage_Board extends Fragment implements  SwipeRefreshLayo
                 if (list.size()>0) {
                     if (actionType == STATE_REFRESH) {
                         curPage = 0;
-                        user.clear();
+                        bmobuser.clear();
                         lastTime = list.get(list.size() - 1).getCreatedAt();
                     }
                     for (User td : list) {
-                        user.add(td);
+                        bmobuser.add(td);
                     }
                     curPage++;
                 } else if (actionType == STATE_MORE) {

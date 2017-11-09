@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isDrawer=false;
     private int transaction;
     private ImageView  sky;
-    private Fragment fragmentmovie,fragmentbook,fragmentgank,fragmentmessageboard;
+    private Fragment fragmentmovie,fragmentbook,fragmentgank,fragmentmessageboard,fragmentabout;
     private Fragment mFragment;//当前显示的Fragment
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,10 +95,11 @@ public class MainActivity extends AppCompatActivity {
                         switchFragment(fragmentbook);
                         break;
                     case R.id.about:
-                        transaction = getSupportFragmentManager()
-                                .beginTransaction()
-                                .replace(R.id.replacefragment,new Fragment_About())
-                                .commit();
+                        switchFragment(fragmentabout);
+//                        transaction = getSupportFragmentManager()
+//                                .beginTransaction()
+//                                .replace(R.id.replacefragment,new Fragment_About())
+//                                .commit();
                         break;
                 }
                 menuItem.setChecked(true);
@@ -138,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentgank=new Fragment_gank();
         fragmentmessageboard=new Fragment_Mesage_Board();
         fragmentmovie=new Fragment_movie();
+        fragmentabout=new Fragment_About();
     }
 
     private void switchFragment(Fragment fragment) {

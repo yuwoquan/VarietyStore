@@ -23,30 +23,24 @@ public class DoubanBookretrofit {
     private static final long cacheSize = 1024 * 1024 * 20;// 缓存文件最大限制大小20M
     private static String cacheDirectory = Environment.getExternalStorageDirectory() + "/okttpcaches"; // 设置缓存文件路径
     private static Cache cache = new Cache(new File(cacheDirectory), cacheSize);
-
-    private static final String DoubanBook_Url = "https://api.douban.com/v2/";
+    private static final String DoubanBook_Url = "https://api.douban.com/v2/";//豆瓣地址
     private static Retrofit retrofit;
     public static Retrofit getRetrofit(){
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
             @Override
             public void log(String message) {
-                //打印retrofit日志
-                Log.d(TAG, "请求网页为："+message);
+                //打印retrofit日志     Log.d(TAG, "请求网页为："+message);
             }
         });
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
-
-
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
-                .connectTimeout(20,TimeUnit.SECONDS)
-                .connectTimeout(20, TimeUnit.SECONDS)
-                .readTimeout(10,TimeUnit.SECONDS)
+                .connectTimeout(20,TimeUnit.SECONDS)//连接超时时间
+                .writeTimeout(20, TimeUnit.SECONDS)//写入超时时间
+                .readTimeout(10,TimeUnit.SECONDS)//读取超时时间
                 .retryOnConnectionFailure(true)
-                .cache(cache)
+                .cache(cache)//缓存
                 .build();
-
-
         if (retrofit == null){
             synchronized (DoubanBookretrofit.class){
                 if (retrofit == null){
