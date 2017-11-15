@@ -3,7 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 <group    android:checkableBehavior="single">
     <item
+        android:id="@+id/book"
         android:checked="true"
+        android:icon="@drawable/book"
+        android:title="豆瓣图书"/>
+    <item
     android:id="@+id/movie"
     android:icon="@drawable/movie"
     android:title="豆瓣电影"/>
@@ -15,10 +19,6 @@
         android:id="@+id/messageboard"
         android:icon="@drawable/messageboard"
         android:title="留言板"/>
-    <item
-        android:id="@+id/book"
-        android:icon="@drawable/book"
-        android:title="豆瓣图书"/>
     <item
          android:id="@+id/about"
          android:icon="@drawable/about"

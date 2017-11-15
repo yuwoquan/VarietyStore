@@ -31,6 +31,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 import static com.example.varietystore.R.id.page;
+import static java.lang.reflect.Array.get;
 
 /**
  * Created by 鱼握拳 on 2017/10/16.
@@ -38,7 +39,6 @@ import static com.example.varietystore.R.id.page;
 
 public class Douban_BookFragment extends Fragment implements RecyclerArrayAdapter.OnLoadMoreListener, SwipeRefreshLayout.OnRefreshListener{
     @Nullable
-
     private List<DoubanBookBean.BooksBean> listBook;
     public static final String PATH = "args_page";
     private BookAdapter adapter;
@@ -48,7 +48,6 @@ public class Douban_BookFragment extends Fragment implements RecyclerArrayAdapte
     private int start=0;
     private String part;
     private static String[] path={"文化","生活","流行","青春","奋斗","科技"};
-    private String authorName;
     public static Douban_BookFragment newInstance(int position) {
         Bundle args = new Bundle();
         args.putString(PATH, path[position]);
@@ -57,7 +56,7 @@ public class Douban_BookFragment extends Fragment implements RecyclerArrayAdapte
         return fragment;
     }
     public void onCreate(Bundle savedInstanceState) {
-        onRefresh();
+//        onRefresh();
         super.onCreate(savedInstanceState);
         part = getArguments().getString(PATH);
         adapter=new BookAdapter(getActivity());
@@ -97,7 +96,7 @@ public class Douban_BookFragment extends Fragment implements RecyclerArrayAdapte
         });
         return view;
     }
-    private void getData(String part, int start) {
+    private void getData(final String part, final int start) {
         DoubanBookretrofit.getRetrofit()
                 .create(ApiService.class)
                 .getBook(part,start,12)
@@ -113,6 +112,7 @@ public class Douban_BookFragment extends Fragment implements RecyclerArrayAdapte
                     public void onError(Throwable e) {
                         ProgressDialog  progressDialog = new ProgressDialog(getContext());
                         progressDialog.setMessage("豆瓣服务器返回数据出错，请稍后访问...");
+//                        progressDialog.show();
                         Log.d(String.valueOf(getContext()), "错误"+e.getMessage());
                     }
 

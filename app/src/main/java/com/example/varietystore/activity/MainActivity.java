@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initViews();
         FragmentManager fragmentManage = getSupportFragmentManager();
-        fragmentManage.beginTransaction().add(R.id.replacefragment,fragmentmovie).commit();
-        mFragment=fragmentmovie;
+        fragmentManage.beginTransaction().add(R.id.replacefragment,fragmentbook).commit();
+        mFragment=fragmentbook;
 
 
 //cooedinatorlayout的监听

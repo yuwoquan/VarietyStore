@@ -77,28 +77,6 @@ public class Douban_MovieFragment extends Fragment implements RecyclerArrayAdapt
     }
 
     public void getMovieData(final String part, final int start) {
-//        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
-//            @Override
-//            public void log(String message) {
-//                //打印retrofit日志
-//                Log.d(TAG, "豆瓣电影链接："+message);
-//
-//            }
-//        });
-//        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
-//        OkHttpClient client = new OkHttpClient.Builder()
-//                .addInterceptor(loggingInterceptor)
-//                .connectTimeout(5, TimeUnit.SECONDS)
-//                .readTimeout(10,TimeUnit.SECONDS)
-//                .build();
-//        final Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl("https://api.douban.com/v2/")
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-//                .client(client)
-//                .build();
-//        final ApiService service=retrofit.create(ApiService.class);
-//        service.getTopMovie(part,start,10)
         DoubanBookretrofit.getRetrofit()
                 .create(ApiService.class)
                 .getTopMovie(part,start,10)
@@ -144,45 +122,5 @@ public class Douban_MovieFragment extends Fragment implements RecyclerArrayAdapt
                 getMovieData(part,0);
             }
         },100);
-    }
-    public void onStart() {
-        super.onStart();
-        Log.d(TAG, "电影："+"onStart");
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        Log.d(TAG, "电影："+"onResume");
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.d(TAG, "电影："+"onPause");
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        Log.d(TAG,"电影："+ "onStop");
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        Log.d(TAG, "电影："+"onDestroyView");
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.d(TAG, "电影："+"onDestroy");
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Log.d(TAG, "电影："+"onDetach");
     }
 }
