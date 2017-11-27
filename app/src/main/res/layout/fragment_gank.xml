@@ -28,7 +28,7 @@
             android:id="@+id/fab_1"
             fab:fab_colorNormal="#ffffff"
             fab:fab_size="mini"
-            fab:fab_icon="@drawable/ios"
+            fab:fab_icon="@drawable/android"
             fab:fab_title="Android"/>
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
             android:id="@+id/fab_2"
             fab:fab_colorNormal="#ffffff"
             fab:fab_size="mini"
-            fab:fab_icon="@drawable/android"
+            fab:fab_icon="@drawable/ios"
             fab:fab_title="iOS"/>
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
