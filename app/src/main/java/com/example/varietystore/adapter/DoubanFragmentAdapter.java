@@ -19,9 +19,9 @@ public class DoubanFragmentAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public Fragment getItem(int position) {
-        return Douban_MovieFragment.newInstance(position);
-    }
+public Fragment getItem(int position) {
+    return Douban_MovieFragment.newInstance(position);
+}
 
     @Override
     public int getCount() {
